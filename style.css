@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Oxanium|PT+Mono&display=swap");
+
+
+:root {
+  --primaryColor: #fff;
+  --navColor1: #21292c;
+  --navColor2: #ff3700;
+  --navColor3: #ff8c00;
+  --navColor4: #0074b3;
+  --navColor5: #00c25a;
+  --navColor6: #c20078;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: PT Mono, sans-serif;
+}
+
+/* --- Navigation Menu ------------------------------ */
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateX(-100vw);
+}
+
+.overlay-slide-right {
+  transition: all 0.4s ease-in-out;
+  transform: translateX(0);
+}
+
+.overlay-slide-left {
+  transition: all 0.8s ease-in-out;
+  transform: translateX(-100vw);
+}
+
+/* Nav Menu Items */
+nav,
+nav ul {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  list-style: none;
+}
+
+nav ul li {
+  height: 20%;
+  overflow: hidden;
+}
+
+nav li a {
+  position: relative;
+  top: 45%;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: larger;
+  display: block;
+  text-align: center;
+}
+
+nav li a:hover {
+  transform: scale(1.2);
+}
+
+nav li a::before {
+  content: "";
+  width: 25vw;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 47.5%;
+  left: 0;
+  opacity: 0;
+}
+
+nav li a:hover::before {
+  opacity: 1;
+}
+
+nav li:nth-of-type(1) {
+  background-color: var(--navColor1);
+}
+
+nav li:nth-of-type(2) {
+  background-color: var(--navColor2);
+}
+
+nav li:nth-of-type(3) {
+  background-color: var(--navColor3);
+}
+
+nav li:nth-of-type(4) {
+  background-color: var(--navColor4);
+}
+
+nav li:nth-of-type(5) {
+  background-color: var(--navColor5);
+}
+
+nav li:nth-of-type(6) {
+  background-color: var(--navColor6);
+}
+
+/* Slide in animation with delay for each */
+.slide-in-1 {
+  animation: slide-in 0.4s linear 0.2s both;
+}
+
+.slide-in-2 {
+  animation: slide-in 0.4s linear 0.4s both;
+}
+
+.slide-in-3 {
+  animation: slide-in 0.4s linear 0.6s both;
+}
+
+.slide-in-4 {
+  animation: slide-in 0.4s linear 0.8s both;
+}
+
+.slide-in-5 {
+  animation: slide-in 0.4s linear 0.9s both;
+}
+
+.slide-in-6 {
+  animation: slide-in 0.4s linear 1s both;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Slide out animation with delay for each */
+.slide-out-1 {
+  animation: slide-out 0.3s linear 0.6s both;
+}
+
+.slide-out-2 {
+  animation: slide-out 0.3s linear 0.5s both;
+}
+
+.slide-out-3 {
+  animation: slide-out 0.3s linear 0.4s both;
+}
+
+.slide-out-4 {
+  animation: slide-out 0.3s linear 0.3s both;
+}
+
+.slide-out-5 {
+  animation: slide-out 0.3s linear 0.2s both;
+}
+
+.slide-out-6 {
+  animation: slide-out 0.3s linear 0.1s both;
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* --- Menu Bars ------------------------------------ */
+
+.menu-bars {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  z-index: 10;
+  display: inline;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 2px;
+  background-color: #000;
+  margin: 8px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  transform: rotate(-45deg) translate(-7px, 8px);
+  background-color: #fff;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  transform: rotate(45deg) translate(-6px, -8px);
+  background-color: #fff;
+}
+
+/* --- Sections ------------------------------------ */
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* text-transform: uppercase; */
+  letter-spacing: 2px;
+  font-size: larger;
+  font-weight: bold;
+  color: var(--primaryColor);
+}
+
+section#home {
+  background-image: url("funzone_background_img.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+#home-text{
+  width: 35%;
+  margin-left:50%;
+  color:#21292c;
+}
+
+#home-text h1{
+  font-size: 3.5rem;
+}
+
+.f{
+  color: var(--navColor2);
+}
+
+.u{
+  color: var(--navColor3);
+}
+
+.n{
+ color: var(--navColor4);
+}
+
+.exclame{
+  color: var(--navColor5);
+}
+
+.white{
+  background-color: white;
+  border-radius: 5px;
+}
+
+section#ping-pong {
+  background-color: var(--navColor2);
+}
+
+section#simon-game {
+  background-color: var(--navColor3);
+}
+
+section#rock-paper-scissor {
+  background-color: var(--navColor4);
+}
+
+section#practice-tables {
+  background-color: var(--navColor5);
+}
+
+section#paint {
+  background-color: var(--navColor6);
+}
+
+section#ping-pong h1,
+section#simon-game h1,
+section#rock-paper-scissor h1,
+section#practice-tables h1,
+section#paint h1{
+  color:var(--navColor1);
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  padding: 4px;
+}
+
+button{
+  background-color: black;
+  border: none;
+  box-shadow: 0 1px 2px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+button a{
+  text-decoration:none;
+  text-transform: uppercase;
+  color: white;
+  font-size: 2rem ;
+}
+
+button:hover{
+  transform: scale(1.2);
+}
+
+button:active{
+  background-color: #babcbd;
+}
+/* Media Query: Large Smartphone (Vertical) */
+@media (max-width: 900px) {
+  section#home{
+  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("funzone_background_img.jpg");
+  }
+
+  #home-text{
+    margin-left: 0;
+    color:black;
+  }
+
+  .menu-bars {
+    top: 0.5rem;
+    right: 1rem;
+  }
+}

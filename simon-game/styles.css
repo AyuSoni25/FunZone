@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css?family=Oxanium|PT+Mono&display=swap");
+body {
+  text-align: center;
+  background-color: #ff8c00;
+}
+
+#level-title {
+  font-family: PT Mono, sans-serif;
+  letter-spacing: 5px;
+  font-size: 3rem;
+  margin:  3%;
+  color: grey;
+}
+
+.container {
+  display: block;
+  width: 50%;
+  margin: auto;
+  background: whitesmoke;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px -5px rgba(255, 255, 255, 0.5);
+}
+
+.btn {
+  margin: 25px;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.game-over {
+  background-color: #900d0d;
+  opacity: 0.8;
+}
+
+.red {
+  background-color:#ff3900;
+}
+
+.green {
+  background-color: #00c35b;
+}
+
+.blue {
+  background-color: #0879b5;
+}
+
+.yellow {
+  background-color: #ff8b00;
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
